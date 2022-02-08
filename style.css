@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aliceblue;
+
+    
+   
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1{
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+h4{
+  
+  font-weight: 600;
+  /* font-size: 2em; */
+  line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-bottom: 1em;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.text-center{
+    text-align: center;
+}
+
+section{
+
+    padding: 2rem 0;
+}
+
+.container {
+    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: min(90%, 75.5rem);
+}
+
+#table{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+    width: min(90%, 60.5rem);
+
+}
+
+.select{
+  margin-left: auto;
+  margin-right: auto;
+  width: min(90%, 75.5rem);
+  display: flex;
+  justify-content: flex-end;
+  /* padding: .5em; */
+  padding: 1em .5em .5em .5em;
+
+  gap: 1.5em;
+  
+
+}
+.date input{
+  border: none;
+  background-color: #f6faff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+  border-radius: .5em;
+  padding: 1em;
+}
+
+#table div{
+    display: grid;
+    
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: .5em;
+    border-bottom: .5px solid lightgray;
+}
+
+
+
+select{
+  height: 40px;
+  font-size: 1.2em;
+  margin-top:1px;
+  border: none;
+  border-style: inset;
+  border: none;
+  background-color: #f6faff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+  padding: .5em;
+  border-radius: .5em;
+  width: 24%;
+}
+#buttons{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1.3em;
+    padding: 1em .5em .5em .5em;
+
+}
+
+    button {
+      color: #090909;
+      padding: 0.7em 1.7em;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 0.5em;
+      background-color: #f6faff;
+      border: none;
+        transition: all .25s ease-in-out;
+        box-shadow: 3px 3px 6px #c5c5c5,
+                    -4px -4px 6px #f6f6f6;
+                    
+                  }
+                  
+                  
+                  button:active {
+                    box-shadow: 4px 4px 12px #c5c5c5,
+                    -4px -4px 12px #ffffff;
+                  }
+                  
+                  .active-btn, .date button{
+                    background-color: #121212;
+                    
+                    color: #f6faff;
+  box-shadow: 0 0 5px #121212;
+  text-shadow: 0 0 5px #f6faff  ;
+
+                    
+       }
+
+
+       button:hover, select:hover, .date input{
+           cursor: pointer;
+       }
+
+
+       .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin-top: 50px;
+        border:none !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        margin: 8px;
+        border: 10px solid #121212;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #121212 transparent transparent transparent;
+      }
+      .lds-ring div:nth-child(1) {
+        animation-delay: -0.45s;
+      }
+      .lds-ring div:nth-child(2) {
+        animation-delay: -0.3s;
+      }
+      .lds-ring div:nth-child(3) {
+        animation-delay: -0.15s;
+      }
+      @keyframes lds-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+
+  @media (max-width: 768px) {
+    body{
+      font-size: 14px;
+      width: auto;
+    }
+    #buttons{
+    grid-template-columns: auto auto;
+
+    }
+    button{
+      padding: 0.5em 1.7em;
+
+    }
+    select{
+      width: 48%;
+    }
+    #table div:not(:first-child) {
+      grid-template-columns: 35% 25% 20% 20%;
+    }
+  }
+    .date button{
+      margin-left: .5em;
+      padding: .7em .7em;
+      transition: .2s ease-in-out;
+    }
+
+    .date button:hover{
+      transform: scale(1.02);
+    }
+
+    [data-cl=completed]{
+      color: green;
+    }
+    [data-cl=no-answer]{
+      color: rgb(83, 195, 240);
+    }
+    [data-cl=failed]{
+      color: red;
+    }
