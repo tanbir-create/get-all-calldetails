@@ -12,7 +12,8 @@
         <span id="total-calls">Total Calls</span> &nbsp; &nbsp;&nbsp;
     <span id="total-completed">Completed</span> &nbsp;&nbsp;&nbsp;
     <span id="total-unanswered">Un-answered</span> &nbsp;&nbsp;&nbsp;
-    <span id="total-failed">Failed</span>
+    <span id="total-failed">Failed</span>&nbsp;&nbsp;&nbsp;
+<span id="total-busy">Busy</span>
     </h3>
 
 <button id="get-data">Get Data</button>
@@ -89,6 +90,7 @@ $('#get-data').on('click', function(){
         $('#total-completed').text(`Completed = ${callStatus('completed').length}`)
         $('#total-failed').text(`Failed = ${callStatus('failed').length}`)
         $('#total-unanswered').text(`Unasnwered = ${callStatus('no-answer').length}`)
+        $('#total-busy').text(`Busy = ${callStatus('busy').length}`)
         
         let sortedDescendeing = results.calls[0].arra.sort((a, b) => new Date(b.date)  - new Date(a.date))
        
