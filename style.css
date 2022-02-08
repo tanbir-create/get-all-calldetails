@@ -16,7 +16,7 @@ body{
     margin-right: auto;
     background-color: aliceblue;
 
-    
+    overflow-x: hidden;
    
 }
 input::-webkit-outer-spin-button,
@@ -53,7 +53,7 @@ h2,
 h3,
 h4,
 p {
-  margin-bottom: 1em;
+  margin: .5em 0;
 }
 
 a{
@@ -83,19 +83,19 @@ section{
     flex-direction: column;
     padding-top: 1em;
     width: min(90%, 60.5rem);
-
+overflow-x: hidden;
 }
 
 .select{
   margin-left: auto;
   margin-right: auto;
-  width: min(90%, 75.5rem);
-  display: flex;
-  justify-content: flex-end;
+  width: min(95%, 75.5rem);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   /* padding: .5em; */
-  padding: 1em .5em .5em .5em;
+  
 
-  gap: 1.5em;
+ 
   
 
 }
@@ -113,6 +113,8 @@ section{
     grid-template-columns: 25% 25% 25% 25%;
     gap: .5em;
     border-bottom: .5px solid lightgray;
+    
+    align-content: center;
 }
 
 
@@ -128,8 +130,10 @@ select{
   box-shadow: 0 0 5px rgba(0, 0, 0, .25);
   padding: .5em;
   border-radius: .5em;
-  width: 24%;
+  /* width: 24%; */
 }
+
+
 #buttons{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -139,17 +143,19 @@ select{
 }
 
     button {
-      color: #090909;
-      padding: 0.7em 1.7em;
+      color: white;
+      padding: 0.5em 1.7em;
       font-size: 18px;
       font-weight: 500;
       border-radius: 0.5em;
-      background-color: #f6faff;
+       background-color: #121212;
       border: none;
         transition: all .25s ease-in-out;
         box-shadow: 3px 3px 6px #c5c5c5,
                     -4px -4px 6px #f6f6f6;
-                    
+                    color: #f6faff;
+ 
+  text-shadow: 0 0 5px #f6faff  ;
                   }
                   
                   
@@ -214,7 +220,9 @@ select{
         }
       }
 
-
+      #tetst{
+        gap: .3em
+      }
   @media (max-width: 768px) {
     body{
       font-size: 14px;
@@ -224,15 +232,37 @@ select{
     grid-template-columns: auto auto;
 
     }
-    button{
-      padding: 0.5em 1.7em;
-
+    #tetst{
+      gap: 0
+    }
+    select{
+      padding: .1em;
+      height: 30px;
+    }
+    #find-date{
+        height: 40%;
+        padding: .2em .6em;
+        transform: translateY(100%);
+        border-radius: .25em;
     }
     select{
       width: 48%;
     }
-    #table div:not(:first-child) {
+    #table{
+      width: 97%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #table div {
       grid-template-columns: 35% 25% 20% 20%;
+    }
+    .select{
+      display: grid;
+      grid-template-rows: 1fr 2fr 1fr;
+      grid-template-columns: auto;
+    }
+    .date input{
+      padding: .3em;
     }
   }
     .date button{
@@ -254,3 +284,73 @@ select{
     [data-cl=failed]{
       color: red;
     }
+
+
+    /* From cssbuttons.io by @westitan */
+#get-data {
+  position: relative;
+  padding: 19px 36px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  border-radius: 40px;
+  border: none;
+ }
+ 
+ #get-data span {
+  position: relative;
+  color: #fff;
+  font-family: Arial;
+  letter-spacing: 8px;
+  z-index: 1;
+ }
+ 
+ #get-data .liquid {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+  transition: .5s;
+ }
+ 
+ #get-data .liquid::after,
+ #get-data .liquid::before {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #fff;
+ }
+ 
+ #get-data .liquid::before {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: animate 5s linear infinite;
+ }
+ 
+ #get-data .liquid::after {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, .5);
+  animation: animate 10s linear infinite;
+ }
+ 
+ #get-data:hover .liquid {
+  top: -120px;
+ }
+ 
+ @keyframes animate {
+  0% {
+   transform: translate(-50%, -75%) rotate(0deg);
+  }
+ 
+  100% {
+   transform: translate(-50%, -75%) rotate(360deg);
+  }
+ }
