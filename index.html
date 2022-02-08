@@ -42,6 +42,10 @@
     </select>
 </div>
 <p id="detailed"></p>
+
+<div id='loadload' style='margin-left:auto; margin-right: auto'></div>
+
+
 <div id="table" class="container">
     
     <div>
@@ -171,7 +175,7 @@ let count2 = (arr, stat) =>{
     let d1 = $("#date-input-from").val()
     let d2 = $("#date-input-to").val()
 
-  
+  $('#loadload').html(`<div class="lds-ring"><div></div><div></div><div></div><div></div></div>`
    
    
     let msFrom = d1.toString();
@@ -195,6 +199,7 @@ let c2 = new Date(msTo).getTime();
 
                 let ddd = `Total Calls from ${d1} to ${d2} = <strong >${a.length} </strong> , Completed =  <strong style="color:green">${count2(a, 'completed')}</strong>, Un-answered = <strong style="color: rgb(83, 195, 240);">${count2(a, 'no-answer')}</strong> Failed = <strong style='color:red'>${count2(a, 'failed')}</strong>`
                 $('#detailed').html(ddd)
+$('#loadload').text('')
                 a.show(100);
             })();
 
