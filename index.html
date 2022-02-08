@@ -121,6 +121,7 @@ $('#category-select').on('change', function(){
                         
                     })
                     //$('#total-calls').text(`Total Calls = ${totalC - a.length}`)
+                   
                     a.hide();
                 })();
     
@@ -145,7 +146,8 @@ $('#category-select').on('change', function(){
                     return  $(this).attr('data-date') != category_value;
                     
                 })
-            
+                let ddd = `Total Calls on ${d}  = <strong >${627 - a.length} </strong> `
+                $('#detailed').html(ddd)
                 a.hide();
             })();
 
