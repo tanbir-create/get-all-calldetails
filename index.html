@@ -74,6 +74,7 @@ $(document).ready(function(){
     .then((resultsArr)=>{
         results = resultsArr;
         $('#get-data').css('visibility', 'visible')
+        console.log(results)
     })
     .catch(err => console.log(err))
 })  
@@ -86,10 +87,10 @@ a = undefined;
   
         $("#table:not(:first-child)").text('')
         
-        totalC = results.calls[0].arra.length;
+        totalC = results.calls.length;
         $('#total-calls').text(`Total Calls = ${totalC}`)
         
-        let arr = results.calls[0].arra
+        let arr = results.calls
         let callStatus =(stat) => arr.filter(el => {
          
          return el.status === stat
@@ -98,7 +99,7 @@ a = undefined;
         $('#total-failed').text(`Failed = ${callStatus('failed').length}`)
         $('#total-unanswered').text(`Unasnwered = ${callStatus('no-answer').length}`)
         
-        let sortedDescendeing = results.calls[0].arra.sort((a, b) => new Date(b.date)  - new Date(a.date))
+        let sortedDescendeing = results.calls.sort((a, b) => new Date(b.date)  - new Date(a.date))
        
         sortedDescendeing.forEach(result => {
             
@@ -182,7 +183,7 @@ $('#category-select').on('change', function(){
                     return  $(this).attr('data-date') != category_value;
                     
                 })
-                let ddd = `Total Calls on ${d}  = <strong >${627 - a.length} </strong>`
+                let ddd = `Total Calls on ${d}  = <strong >${699 - a.length} </strong>`
                 $('#detailed').html(ddd)
                 a.hide();
             })();
